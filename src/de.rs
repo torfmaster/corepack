@@ -324,7 +324,7 @@ impl<'de, 'a, R: Read<'de>> serde::Deserializer<'de> for &'a mut Deserializer<'d
     fn deserialize_f32<V>(self, visitor: V) -> Result<V::Value, Error>
         where V: serde::de::Visitor<'de>
     {
-        self.deserialize_f64(visitor)
+        self.deserialize_any(visitor)
     }
 
     fn deserialize_str<V>(self, visitor: V) -> Result<V::Value, Error>
